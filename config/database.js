@@ -9,7 +9,7 @@ exports.connect = () => {
 
 	mongoose.connect(process.env.DB_CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 		.then(() => {
-			console.log('Successfully connected to db');
+			console.log('Successfully connected to db ');
 		})
 		.catch(error => {
 			console.log("Database connection failed. Exiting now");
