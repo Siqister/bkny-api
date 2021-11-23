@@ -2,10 +2,12 @@
 const fetch = require('node-fetch');
 const https = require('https');
 const base64 = require('base-64');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const apiRoot = 'https://10.8.0.118/https_api.php';
-const username = 'admin';
-const password = 'wago';
+const apiRoot = process.env.FLOWELL_API;
+const username = process.env.FLOWELL_API_USERNAME;
+const password = process.env.FLOWELL_API_PASSWORD;
 
 // need these FETCH options to work with Flowell API
 const agent = new https.Agent({

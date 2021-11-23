@@ -22,8 +22,8 @@ db.connect();
 const timer = flowell.keepAlive();
 
 // app logic
-app.get('/', auth, (req, res) => {
-	res.send('hello world');
+app.get('/', (req, res) => {
+	res.send('hello to BKNY Flex Curb API');
 });
 
 // register and login

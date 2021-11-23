@@ -27,11 +27,13 @@ router.post('/', async (req, res) => {
 					{ user_id: user._id, email },
 					TOKEN_KEY,
 					{
-						expiresIn: '2h'
+						expiresIn: '24h'
 					}
 				);
 
+			const t = new Date();
 			user.token = token;
+			user.tokenExpiry = new Date(t.valueOf() + 24*3600*1000);
 
 			res.status(200).json(user);
 		}else{

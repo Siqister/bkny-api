@@ -1,6 +1,11 @@
 const cors = require('cors');
 const app = require('./app');
+const dotenv = require('dotenv');
 
-app.listen(8000, () => {
-	console.log('Server running on port 8000 ');
+dotenv.config();
+
+const PORT = process.env.PORT || 8000; //will be added by heroku later
+
+app.listen(PORT, () => {
+	console.log(`Server running on port ${PORT} `);
 });
